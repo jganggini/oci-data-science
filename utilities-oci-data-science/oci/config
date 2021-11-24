@@ -1,0 +1,6 @@
+[DEFAULT]
+user=ocid1.user.oc1..****************************************************
+fingerprint=**:**:**:**:**:**:**:**:**:**:**:**:**:**:**:**
+tenancy=ocid1.tenancy.oc1..****************************************************
+region=sa-saopaulo-1
+key_file=~/oci/oracleidentitycloudservice_joel.ganggini-11-03-16-22.pem
