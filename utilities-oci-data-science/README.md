@@ -41,10 +41,7 @@
 <!-- Proyecto -->
 ## Proyecto
 
-El proyecto cubre un conjunto de casos para acelerar la interacción de datos entre diversos servicios en `Oracle Cloud Infrastructure`.
-
-Para ello les comparto el paso a paso de cómo llegar a hacer estas integraciones rápidas en PySpark gracias a los SDK sin necesidad de realizar mapeos o seguimiento de los directorios existentes.
-
+El proyecto cubre un conjunto de casos para acelerar la interacción de datos entre diversos servicios en `Oracle Cloud Infrastructure` y las librerias mas usadas.
 
 El siguiente diagrama ilustra esta arquitectura de referencia:
 
@@ -109,9 +106,9 @@ Los SDK y la CLI de Oracle Cloud Infrastructure requieren información de config
     pip install pickle
     ```
 
-*  [Oracle Accelerated Data Science SDK (ADS)](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/index.html): El SDK de Oracle Accelerated Data Science (ADS) es una biblioteca de Python que se incluye como parte del servicio Oracle Cloud Infrastructure Data Science. `— Ya intalado en OCI Data Science`
+*  [Oracle Accelerated Data Science SDK (ADS)](https://docs.oracle.com/en-us/iaas/tools/ads-sdk/latest/index.html): El SDK de Oracle Accelerated Data Science (ADS) es una biblioteca de Python que se incluye como parte del servicio Oracle Cloud Infrastructure Data Science. `— Ya intalado`
 
-*  [Oracle Cloud Infrastructure Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html): Este es el SDK público de Python para Oracle Cloud Infrastructure. `— Ya intalado en OCI Data Science`
+*  [Oracle Cloud Infrastructure Python SDK](https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html): Este es el SDK público de Python para Oracle Cloud Infrastructure. `— Ya intalado`
 
 <!-- OCI Data Science -->
 ## OCI Data Science
