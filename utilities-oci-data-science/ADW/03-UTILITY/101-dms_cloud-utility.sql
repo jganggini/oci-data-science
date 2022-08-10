@@ -33,13 +33,15 @@
     END;
     /
     
-  --2.- [DBMS_CLOUD.EXPORT_DATA] 
+  --2.- [DBMS_CLOUD.EXPORT_DATA]
+  --https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/format-options-json.html#GUID-3CE7574F-E78B-49D6-9F32-DC00AEE418F4
     BEGIN
       DBMS_CLOUD.EXPORT_DATA(
         credential_name => 'DEF_CRED_LAKEHOUSE',
+        --https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/file-uri-formats.html#GUID-F4295FA3-5A1E-41C4-91EB-D450E082AF47
         file_uri_list   => 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/namespace-string/b/bucketname/o/dept_export/file-name.csv',
         query           => 'SELECT * FROM SH.CUSTOMERS',
-        format          => JSON_OBJECT('type' value 'csv', 'delimiter' value '|')
+        format          => JSON_OBJECT('type' value 'csv', 'delimiter' value ',', 'maxfilesize' value 2147483648)
       );
     END;
     /
