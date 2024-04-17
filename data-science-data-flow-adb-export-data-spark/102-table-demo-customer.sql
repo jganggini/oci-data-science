@@ -1,0 +1,196 @@
+CREATE TABLE CUSTOMER_DEMO (
+    CUSTOMER_ID NUMBER GENERATED ALWAYS AS IDENTITY
+        MINVALUE 1 MAXVALUE 9999999999999999999999999999
+        INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER NOCYCLE NOKEEP NOSCALE NOT NULL ENABLE,
+    REGISTRATION_DATE          TIMESTAMP(6),
+    MODIFICATION_DATE          TIMESTAMP(6),
+    CUSTOMER_CODE              VARCHAR2(50),
+    DOCUMENT_CODE              VARCHAR2(50),
+    DOCUMENT_TYPE              NUMBER,
+    FIRST_NAME                 VARCHAR2(200),
+    LAST_NAME                  VARCHAR2(200),
+    BIRTH_DATE                 TIMESTAMP(6),
+    GENDER                     NUMBER DEFAULT 1 CONSTRAINT CHK_GENDER CHECK (GENDER IN (1, 2)),
+    EMAIL                      VARCHAR2(200),
+    STATUS                     NUMBER,
+    PHONE_NUMBER               VARCHAR2(10),
+    LAST_MODIFICATION_DATE     TIMESTAMP(6)
+)
+PARTITION BY RANGE (LAST_MODIFICATION_DATE) 
+(
+    PARTITION P_202001 VALUES LESS THAN (TO_DATE('2020-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202002 VALUES LESS THAN (TO_DATE('2020-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202003 VALUES LESS THAN (TO_DATE('2020-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202004 VALUES LESS THAN (TO_DATE('2020-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202005 VALUES LESS THAN (TO_DATE('2020-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202006 VALUES LESS THAN (TO_DATE('2020-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202007 VALUES LESS THAN (TO_DATE('2020-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202008 VALUES LESS THAN (TO_DATE('2020-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202009 VALUES LESS THAN (TO_DATE('2020-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202010 VALUES LESS THAN (TO_DATE('2020-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202011 VALUES LESS THAN (TO_DATE('2020-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202012 VALUES LESS THAN (TO_DATE('2021-01-01', 'YYYY-MM-DD')),
+    PARTITION P_202101 VALUES LESS THAN (TO_DATE('2021-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202102 VALUES LESS THAN (TO_DATE('2021-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202103 VALUES LESS THAN (TO_DATE('2021-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202104 VALUES LESS THAN (TO_DATE('2021-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202105 VALUES LESS THAN (TO_DATE('2021-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202106 VALUES LESS THAN (TO_DATE('2021-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202107 VALUES LESS THAN (TO_DATE('2021-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202108 VALUES LESS THAN (TO_DATE('2021-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202109 VALUES LESS THAN (TO_DATE('2021-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202110 VALUES LESS THAN (TO_DATE('2021-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202111 VALUES LESS THAN (TO_DATE('2021-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202112 VALUES LESS THAN (TO_DATE('2022-01-01', 'YYYY-MM-DD')),
+    PARTITION P_202201 VALUES LESS THAN (TO_DATE('2022-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202202 VALUES LESS THAN (TO_DATE('2022-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202203 VALUES LESS THAN (TO_DATE('2022-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202204 VALUES LESS THAN (TO_DATE('2022-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202205 VALUES LESS THAN (TO_DATE('2022-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202206 VALUES LESS THAN (TO_DATE('2022-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202207 VALUES LESS THAN (TO_DATE('2022-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202208 VALUES LESS THAN (TO_DATE('2022-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202209 VALUES LESS THAN (TO_DATE('2022-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202210 VALUES LESS THAN (TO_DATE('2022-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202211 VALUES LESS THAN (TO_DATE('2022-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202212 VALUES LESS THAN (TO_DATE('2023-01-01', 'YYYY-MM-DD')),
+    PARTITION P_202301 VALUES LESS THAN (TO_DATE('2023-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202302 VALUES LESS THAN (TO_DATE('2023-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202303 VALUES LESS THAN (TO_DATE('2023-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202304 VALUES LESS THAN (TO_DATE('2023-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202305 VALUES LESS THAN (TO_DATE('2023-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202306 VALUES LESS THAN (TO_DATE('2023-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202307 VALUES LESS THAN (TO_DATE('2023-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202308 VALUES LESS THAN (TO_DATE('2023-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202309 VALUES LESS THAN (TO_DATE('2023-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202310 VALUES LESS THAN (TO_DATE('2023-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202311 VALUES LESS THAN (TO_DATE('2023-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202312 VALUES LESS THAN (TO_DATE('2024-01-01', 'YYYY-MM-DD')),
+    PARTITION P_202401 VALUES LESS THAN (TO_DATE('2024-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202402 VALUES LESS THAN (TO_DATE('2024-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202403 VALUES LESS THAN (TO_DATE('2024-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202404 VALUES LESS THAN (TO_DATE('2024-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202405 VALUES LESS THAN (TO_DATE('2024-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202406 VALUES LESS THAN (TO_DATE('2024-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202407 VALUES LESS THAN (TO_DATE('2024-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202408 VALUES LESS THAN (TO_DATE('2024-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202409 VALUES LESS THAN (TO_DATE('2024-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202410 VALUES LESS THAN (TO_DATE('2024-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202411 VALUES LESS THAN (TO_DATE('2024-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202412 VALUES LESS THAN (TO_DATE('2025-01-01', 'YYYY-MM-DD')),
+    PARTITION P_202501 VALUES LESS THAN (TO_DATE('2025-02-01', 'YYYY-MM-DD')),
+    PARTITION P_202502 VALUES LESS THAN (TO_DATE('2025-03-01', 'YYYY-MM-DD')),
+    PARTITION P_202503 VALUES LESS THAN (TO_DATE('2025-04-01', 'YYYY-MM-DD')),
+    PARTITION P_202504 VALUES LESS THAN (TO_DATE('2025-05-01', 'YYYY-MM-DD')),
+    PARTITION P_202505 VALUES LESS THAN (TO_DATE('2025-06-01', 'YYYY-MM-DD')),
+    PARTITION P_202506 VALUES LESS THAN (TO_DATE('2025-07-01', 'YYYY-MM-DD')),
+    PARTITION P_202507 VALUES LESS THAN (TO_DATE('2025-08-01', 'YYYY-MM-DD')),
+    PARTITION P_202508 VALUES LESS THAN (TO_DATE('2025-09-01', 'YYYY-MM-DD')),
+    PARTITION P_202509 VALUES LESS THAN (TO_DATE('2025-10-01', 'YYYY-MM-DD')),
+    PARTITION P_202510 VALUES LESS THAN (TO_DATE('2025-11-01', 'YYYY-MM-DD')),
+    PARTITION P_202511 VALUES LESS THAN (TO_DATE('2025-12-01', 'YYYY-MM-DD')),
+    PARTITION P_202512 VALUES LESS THAN (TO_DATE('2026-01-01', 'YYYY-MM-DD'))
+);
+
+/*
+    [SYNTHETIC DATA] CUSTOMER_DEMO
+    TRUNCATE -> INSERT -> SELECT
+*/
+--TRUNCATE TABLE CUSTOMER_DEMO;
+SET SERVEROUTPUT ON;
+DECLARE
+  TYPE t_customer_rec IS RECORD (
+    registration_date TIMESTAMP,
+    modification_date TIMESTAMP,
+    customer_code VARCHAR2(10),
+    document_code VARCHAR2(50),
+    document_type NUMBER,
+    first_name VARCHAR2(200),
+    last_name VARCHAR2(200),
+    birth_date TIMESTAMP,
+    gender NUMBER,
+    email VARCHAR2(255),
+    status NUMBER,
+    phone_number VARCHAR2(10),
+    last_modification_date TIMESTAMP
+  );
+
+  TYPE t_customer_tab IS TABLE OF t_customer_rec INDEX BY PLS_INTEGER;
+  v_customers t_customer_tab;
+  v_max_entries NUMBER := 90000000; -- Número total de entradas a crear
+  v_batch_size NUMBER := 10000;     -- Tamaño del lote para commit de la transacción
+  v_counter NUMBER := 1;
+
+BEGIN
+  FOR i IN 1..v_max_entries LOOP
+    v_customers(v_counter).registration_date := CURRENT_TIMESTAMP;
+    v_customers(v_counter).modification_date := CURRENT_TIMESTAMP;
+    v_customers(v_counter).customer_code := DBMS_RANDOM.STRING('U', 10);
+    v_customers(v_counter).document_code := DBMS_RANDOM.STRING('X', 50);
+    v_customers(v_counter).document_type := ROUND(DBMS_RANDOM.VALUE(1, 5));
+    v_customers(v_counter).first_name := DBMS_RANDOM.STRING('A', 200);
+    v_customers(v_counter).last_name := DBMS_RANDOM.STRING('A', 200);
+    v_customers(v_counter).birth_date := TIMESTAMP '1970-01-01 00:00:00' + NUMTODSINTERVAL(DBMS_RANDOM.VALUE(0, 365 * 50), 'DAY');
+    v_customers(v_counter).gender := ROUND(DBMS_RANDOM.VALUE(1, 2));
+    v_customers(v_counter).email := DBMS_RANDOM.STRING('A', 10) || '@example.com';
+    v_customers(v_counter).status := ROUND(DBMS_RANDOM.VALUE(0, 1));
+    v_customers(v_counter).phone_number := DBMS_RANDOM.STRING('U', 10);
+    v_customers(v_counter).last_modification_date := TIMESTAMP '2020-01-01 00:00:00' + NUMTODSINTERVAL(DBMS_RANDOM.VALUE(0, 365 * 5), 'DAY');
+
+    IF v_counter = v_batch_size THEN
+      FORALL indx IN 1..v_customers.COUNT
+        INSERT INTO /*+ APPEND */ CUSTOMER_DEMO (
+          REGISTRATION_DATE, MODIFICATION_DATE, CUSTOMER_CODE, DOCUMENT_CODE, 
+          DOCUMENT_TYPE, FIRST_NAME, LAST_NAME, BIRTH_DATE, GENDER, EMAIL, 
+          STATUS, PHONE_NUMBER, LAST_MODIFICATION_DATE
+        ) VALUES (
+          v_customers(indx).registration_date, v_customers(indx).modification_date, v_customers(indx).customer_code, 
+          v_customers(indx).document_code, v_customers(indx).document_type, v_customers(indx).first_name, 
+          v_customers(indx).last_name, v_customers(indx).birth_date, v_customers(indx).gender, v_customers(indx).email, 
+          v_customers(indx).status, v_customers(indx).phone_number, v_customers(indx).last_modification_date
+        );
+
+      COMMIT;
+      DBMS_OUTPUT.PUT_LINE('Inserts completed: ' || i);
+      v_customers.DELETE;
+      v_counter := 0;
+    END IF;
+    v_counter := v_counter + 1;
+  END LOOP;
+
+  -- Insertar los registros restantes si los hay
+  IF v_customers.COUNT > 0 THEN
+    FORALL indx IN 1..v_customers.COUNT
+      INSERT INTO /*+ APPEND */ CUSTOMER_DEMO (
+        REGISTRATION_DATE, MODIFICATION_DATE, CUSTOMER_CODE, DOCUMENT_CODE, 
+        DOCUMENT_TYPE, FIRST_NAME, LAST_NAME, BIRTH_DATE, GENDER, EMAIL, 
+        STATUS, PHONE_NUMBER, LAST_MODIFICATION_DATE
+      ) VALUES (
+        v_customers(indx).registration_date, v_customers(indx).modification_date, v_customers(indx).customer_code, 
+        v_customers(indx).document_code, v_customers(indx).document_type, v_customers(indx).first_name, 
+        v_customers(indx).last_name, v_customers(indx).birth_date, v_customers(indx).gender, v_customers(indx).email, 
+        v_customers(indx).status, v_customers(indx).phone_number, v_customers(indx).last_modification_date
+      );
+
+    COMMIT;
+  END IF;
+
+  DBMS_OUTPUT.PUT_LINE('Total inserts completed: ' || v_max_entries);
+END;
+
+
+-- 27489000
+SELECT COUNT(1) FROM CUSTOMER_DEMO;
+
+-- 14.79 Gb
+SELECT
+segment_name,
+segment_type,
+tablespace_name,
+SUM(bytes)/1024/1024 AS total_megabytes,
+SUM(bytes)/1024/1024/1024 AS total_gigabytes
+FROM dba_segments
+WHERE segment_name = 'CUSTOMER_DEMO' OR segment_name IN (
+    SELECT index_name FROM dba_indexes WHERE table_name = 'CUSTOMER_DEMO'
+)
+GROUP BY segment_name, segment_type, tablespace_name;
